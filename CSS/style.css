@@ -1,0 +1,272 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --P-Blue: hsl(243, 100%, 93%);
+  --G-Blue: hsl(229, 7%, 55%);
+  --D-Blue: hsl(228, 56%, 26%);
+  --v-d-blue: hsl(229, 57%, 11%);
+}
+
+body {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+}
+
+main {
+  min-height: 100svh;
+  background: var(--v-d-blue) url("../Images/bg-mobile.png") no-repeat center
+    center;
+  background-size: cover;
+  padding: 1.5rem;
+  color: var(--P-Blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+}
+
+.container > div {
+  background-color: hsl(228, 56%, 26%);
+  padding: 40px;
+}
+
+.info {
+  border-radius: 15px 100px 15px 15px;
+  -webkit-border-radius: 15px 100px 15px 15px;
+  -moz-border-radius: 15px 100px 15px 15px;
+  -ms-border-radius: 15px 100px 15px 15px;
+  -o-border-radius: 15px 100px 15px 15px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.info > ul {
+  margin-top: 30px;
+}
+
+.info > ul > li {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(229, 57%, 11%);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.details {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  text-align: center;
+  position: relative;
+  min-height: 150px;
+}
+
+.details > p {
+  font-size: 14px;
+}
+
+.details > p > span {
+  font-weight: 700;
+}
+
+.details .progress-holder {
+  max-width: 100%;
+  height: 20px;
+  background-color: rgb(20, 32, 74);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  border: 3px solid rgb(20, 32, 74);
+  position: relative;
+  margin: 10px 0 25px;
+}
+
+.progress-holder::before,
+.progress-holder::after {
+  position: absolute;
+  top: calc(100% + 10px);
+  font-weight: 700;
+}
+
+.progress-holder::before {
+  content: "0 GB";
+  left: 0;
+}
+
+.progress-holder::after {
+  content: "1000 GB";
+  right: 0;
+}
+
+.details .progress-holder .prog {
+  width: 80%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+  position: relative;
+}
+
+.details .progress-holder .prog::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  margin-top: -5px;
+  background-color: white;
+}
+
+.GB-left {
+  position: absolute;
+  top: calc(100% - 35px);
+  height: 70px;
+  width: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.GB-left .GB {
+  color: var(--v-d-blue);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.GB-left .left {
+  text-transform: uppercase;
+  color: var(--G-Blue);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  main {
+    background: var(--v-d-blue) url("../Images/bg-desktop.png") no-repeat bottom -50px
+      center;
+    background-size: contain;
+  }
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    gap: 30px;
+  }
+
+  .container .info {
+    flex-basis: 25%;
+  }
+
+  .container .details {
+    flex-basis: 40%;
+  }
+
+  .container .details > p {
+    text-align: left;
+  }
+
+  .container .details .GB-left {
+    border-radius: 15px 15px 0 15px;
+    -webkit-border-radius: 15px 15px 0 15px;
+    -moz-border-radius: 15px 15px 0 15px;
+    -ms-border-radius: 15px 15px 0 15px;
+    -o-border-radius: 15px 15px 0 15px;
+    top: -50px;
+    left: calc(100% - 210px);
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+
+  .container .details .GB-left::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 20px;
+    border-color: white;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    right: 0;
+    top: 100%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+}
